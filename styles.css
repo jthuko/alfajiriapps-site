@@ -1,0 +1,106 @@
+:root {
+  --navy: #102333;
+  --teal: #0b8995;
+  --surface: #ffffff;
+  --background: #f4f7f9;
+  --muted: #5d6d79;
+  --border: #d7e0e5;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  color: var(--navy);
+  background: var(--background);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.65;
+}
+
+a { color: var(--teal); }
+
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 22px max(24px, calc((100% - 960px) / 2));
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+}
+
+.brand {
+  color: var(--teal);
+  font-size: .92rem;
+  font-weight: 800;
+  letter-spacing: .18em;
+  text-decoration: none;
+}
+
+nav a { font-weight: 700; text-decoration: none; }
+
+.container {
+  width: min(960px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 72px 0 96px;
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  color: var(--teal);
+  font-size: .8rem;
+  font-weight: 800;
+  letter-spacing: .18em;
+}
+
+h1 {
+  max-width: 800px;
+  margin: 0 0 20px;
+  font-size: clamp(2.3rem, 6vw, 4.5rem);
+  line-height: 1.05;
+  letter-spacing: -.045em;
+}
+
+.lead { max-width: 680px; color: var(--muted); font-size: 1.25rem; }
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+  margin-top: 48px;
+}
+
+.card, .notice {
+  padding: 28px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+}
+
+.card { color: inherit; text-decoration: none; }
+.card:hover { border-color: var(--teal); transform: translateY(-2px); }
+.card h2, .notice h2 { margin-top: 0; }
+.card p { color: var(--muted); }
+
+.article {
+  max-width: 780px;
+  padding-top: 56px;
+}
+
+.article h1 { font-size: clamp(2.3rem, 5vw, 3.7rem); }
+.article h2 { margin: 38px 0 8px; font-size: 1.35rem; }
+.article p, .article li { color: #3f505c; }
+.updated { margin-top: -8px; color: var(--muted); }
+.notice { margin: 32px 0; }
+.notice h2 { margin: 0; }
+
+footer {
+  padding: 28px 20px;
+  color: var(--muted);
+  text-align: center;
+  border-top: 1px solid var(--border);
+}
+
+@media (max-width: 640px) {
+  .container { padding-top: 48px; }
+  .cards { grid-template-columns: 1fr; }
+}
